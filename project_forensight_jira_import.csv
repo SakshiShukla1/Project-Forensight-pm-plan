@@ -1,0 +1,59 @@
+Issue Type,Summary,Description,Priority,Story Points,Sprint,Assignee,Component
+Story,Set up FastAPI backend & SQLite evidence database schema,"Set up initial FastAPI backend repository and configure SQLite database schema for secure evidence storage.
+
+Acceptance Criteria:
+1. FastAPI project structure initialized with clean architecture.
+2. SQLite schema created with tables for Users, Artifacts, Analysis Results, and Audit Logs.
+3. Basic database connection tests passing.",High,5,Sprint 1,Backend Developer,Backend / Database
+Story,Build URL & Domain metadata extraction API endpoint,"Implement backend endpoint in FastAPI to parse suspicious URLs/domains, retrieve DNS records, WHOIS data, and security threat scores.
+
+Acceptance Criteria:
+1. POST /api/v1/scan/url accepts valid URL string.
+2. Extracts domain age, registrar info, and IP reputation.
+3. Returns threat risk score (0-100) and saves result to SQLite.",High,8,Sprint 2,Backend Developer,Extraction Engine
+Story,Implement Email header & EML file parser,"Create parser service to extract hop headers, sender IP, DKIM/SPF validation, and suspicious attachment details from uploaded .eml files.
+
+Acceptance Criteria:
+1. Accepts .eml files up to 25MB.
+2. Extracts sending IP chain and flags spoofing indicators.
+3. Output formatted in clean JSON structure for UI consumption.",High,8,Sprint 2,Backend Developer,Extraction Engine
+Story,Build Browser History & File hash analysis module,"Extract browser history files (SQLite/Chrome/Firefox format) and compute file hashes (MD5, SHA-256) for suspicious file uploads.
+
+Acceptance Criteria:
+1. Computes MD5 and SHA-256 hashes within 5 seconds for files < 50MB.
+2. Parses browser history DB files and extracts top visited domains and timestamps.
+3. Results logged to evidence vault.",Medium,5,Sprint 3,Backend Developer,Extraction Engine
+Story,Create React evidence upload & scan dashboard,"Design and build drag-and-drop file/URL submission interface in React with real-time processing status indicators.
+
+Acceptance Criteria:
+1. Supports file drag-and-drop and URL text input.
+2. Displays progress spinner and clear status updates during extraction.
+3. Displays high-contrast threat score badges upon completion.",High,5,Sprint 4,Frontend Developer,Frontend Dashboard
+Story,Develop Search & Evidence Filter UI,"Build UI data table in React with search, sorting, and filtering capabilities across historical evidence records.
+
+Acceptance Criteria:
+1. Search by keyword, hash, IP address, or investigator ID.
+2. Filter by risk level (High, Medium, Low) and date range.
+3. Pagination supports 25, 50, and 100 records per page.",Medium,5,Sprint 4,Frontend Developer,Frontend Dashboard
+Story,Implement Investigator Login & Audit Logging,"Build investigator authentication and immutable audit logging system for chain-of-custody compliance.
+
+Acceptance Criteria:
+1. Role-based login for Investigators and Admin leads.
+2. Every scan, view, or export action logged with timestamp, user ID, and target hash.
+3. Audit logs read-only and exportable.",High,3,Sprint 5,Full-Stack Developer,Security / Audit
+Story,Accuracy tuning & false-positive reduction testing,"Run benchmark tests against benign sample datasets to calibrate threat scoring algorithms and reduce false positives.
+
+Acceptance Criteria:
+1. Run test suite against 100 known clean files/URLs and 100 malicious samples.
+2. False positive rate reduced to under 3%.
+3. QA sign-off document attached to ticket.",High,5,Sprint 5,QA Specialist,QA / Testing
+Task,Generate PDF Forensic Report Exporter,"Develop feature allowing investigators to export evidence analysis into a structured PDF executive report.
+
+Acceptance Criteria:
+1. One-click export button on scan results page.
+2. Generates clean PDF report including summary, extracted metadata, and chain-of-custody log.",Medium,3,Sprint 6,Full-Stack Developer,Reporting
+Task,Final Client Demo & Handoff Documentation,"Prepare user manual, architecture diagram overview, and present final deployment demo to client stakeholders.
+
+Acceptance Criteria:
+1. User guide document completed.
+2. Final client demo completed with official sign-off.",High,2,Sprint 6,IT Project Manager,Documentation
