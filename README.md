@@ -23,6 +23,5 @@ This repository contains all PM documentation, Agile sprint planning, risk manag
 
 <img width="959" height="445" alt="image" src="https://github.com/user-attachments/assets/dca98e0d-bfe1-457b-a693-e4033dd13309" />
 
---- 
 
 
