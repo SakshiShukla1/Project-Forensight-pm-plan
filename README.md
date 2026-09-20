@@ -1,5 +1,5 @@
 # 🛡️ Project Forensight — IT Project Management Plan & Portfolio
-Project Management Repository for **Project Forensight**, an enterprise digital forensics and automated incident response platform. 
+Project Management Repository for **Project Forensight**, a digital forensics and automated incident response platform. 
 
 This repository contains all PM documentation, Agile sprint planning, risk management artifacts, and Jira configuration assets used to plan, track, and execute the delivery of this project.
 
